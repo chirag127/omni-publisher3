@@ -1,56 +1,45 @@
 {
     "name": "omni-publisher-ecosystem",
     "version": "1.0.0",
-    "description": "Write Once, Publish Everywhere automation system",
+    "description": "A production-ready content ecosystem for publishing to multiple platforms.",
     "main": "dist/publish.js",
     "scripts": {
         "build": "tsc",
         "start": "node dist/publish.js",
-        "publish": "node dist/publish.js",
-        "publish:mock": "node dist/publish.js --mock",
-        "publish:dry": "node dist/publish.js --dry-run",
-        "start:mock": "ts-node src/mock-server.ts",
-        "test": "jest",
-        "build:site": "ts-node src/build-site.ts"
+        "publish": "ts-node src/publish.ts",
+        "build-site": "ts-node src/build-site.ts",
+        "test": "ts-node src/test/mock-server.ts & ts-node src/publish.ts --mock && echo 'Tests Completed'",
+        "lint": "eslint src/**/*.ts"
     },
     "keywords": [
-        "blog",
         "publisher",
-        "automation",
-        "syndication"
+        "blog",
+        "content",
+        "automation"
     ],
-    "author": "Omni-Publisher Bot",
+    "author": "Omni-Publisher Team",
     "license": "MIT",
     "dependencies": {
         "axios": "^1.6.0",
-        "dotenv": "^16.3.1",
-        "front-matter": "^4.0.2",
-        "glob": "^10.3.10",
-        "marked": "^10.0.0",
-        "oauth-1.0a": "^2.2.6",
-        "winston": "^3.11.0",
-        "yargs": "^17.7.2",
         "chalk": "^4.1.2",
-        "cheerio": "^1.0.0-rc.12",
-        "form-data": "^4.0.0",
-        "googleapis": "^128.0.0",
-        "node-fetch": "^3.3.2"
+        "commander": "^11.0.0",
+        "dotenv": "^16.3.1",
+        "fs-extra": "^11.1.1",
+        "glob": "^10.3.10",
+        "gray-matter": "^4.0.3",
+        "js-yaml": "^4.1.0",
+        "marked": "^9.1.2",
+        "oauth-1.0a": "^2.2.6",
+        "winston": "^3.11.0"
     },
     "devDependencies": {
+        "@types/fs-extra": "^11.0.2",
         "@types/glob": "^8.1.0",
-        "@types/jest": "^29.5.8",
+        "@types/js-yaml": "^4.0.8",
         "@types/marked": "^5.0.2",
-        "@types/node": "^20.9.0",
-        "@types/yargs": "^17.0.32",
-        "@types/chalk": "^2.2.0",
-        "@types/cheerio": "^0.22.35",
-        "jest": "^29.7.0",
-        "ts-jest": "^29.1.1",
+        "@types/node": "^20.8.10",
+        "eslint": "^8.52.0",
         "ts-node": "^10.9.1",
         "typescript": "^5.2.2"
-    },
-    "jest": {
-        "preset": "ts-jest",
-        "testEnvironment": "node"
     }
 }

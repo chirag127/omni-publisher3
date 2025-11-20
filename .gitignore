@@ -1,5 +1,8 @@
-node_modules
-dist
+node_modules/
+dist/
 .env
 .DS_Store
-coverage
+coverage/
+public/
+!public/assets/styles.css
+!public/index.html
