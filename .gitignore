@@ -1,8 +1,37 @@
-node_modules/
-dist/
-.env
+# Dependency Directories
+/node_modules
+/dist
+/build
+
+# Build Artifacts (Vite/TS)
+*.tsbuildinfo
+.vite-assets
+
+# Logs and Temp Files
+npm-debug.log*
 .DS_Store
-coverage/
-public/
-!public/assets/styles.css
-!public/index.html
+*.log
+*.tmp
+
+# IDE/Editor Files
+.vscode/
+.idea/
+*.swp
+
+# Testing and Coverage
+/coverage
+/test-results
+
+# Package Manager Cache (uv/pip)
+__pypackages__/
+*.egg-info/
+.venv/
+/venv/
+
+# Static Site Generation Output (If applicable, common for SSGs)
+/public
+/out
+
+# Docker/Containerization
+Dockerfile.build
+.dockerignore
